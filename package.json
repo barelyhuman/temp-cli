@@ -1,0 +1,51 @@
+{
+	"name": "temp-cli",
+	"version": "0.0.0",
+	"description": "mac os x m1 temperature check cli",
+	"keywords": [
+		"cli",
+		"osx-temperature",
+		"m1",
+		"temp"
+	],
+	"license": "MIT",
+	"author": "Reaper <ahoy@barelyhuman.dev>",
+	"type": "module",
+	"main": "source/index.js",
+	"bin": {
+		"temp-cli": "./source/index.js"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "npm test",
+		"release": "np",
+		"test": "xo",
+		"version": "npm run build",
+		"patch": "npx patch-package",
+		"prepare": "npm run patch"
+	},
+	"xo": {
+		"prettier": true
+	},
+	"prettier": {
+		"bracketSpacing": false,
+		"semi": false,
+		"singleQuote": true,
+		"trailingComma": "es5",
+		"useTabs": true
+	},
+	"devDependencies": {
+		"np": "^7.6.0",
+		"prettier": "^2.5.1",
+		"xo": "^0.47.0"
+	},
+	"engines": {
+		"node": ">=12"
+	},
+	"dependencies": {
+		"kleur": "^4.1.4",
+		"stdout-update": "^3.0.2"
+	}
+}

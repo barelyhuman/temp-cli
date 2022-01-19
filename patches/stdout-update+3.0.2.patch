@@ -1,0 +1,50 @@
+diff --git a/node_modules/stdout-update/lib/Hook.js b/node_modules/stdout-update/lib/Hook.js
+index b18b0ee..57755c7 100644
+--- a/node_modules/stdout-update/lib/Hook.js
++++ b/node_modules/stdout-update/lib/Hook.js
+@@ -12,7 +12,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
+ var _Hook_decoder, _Hook_history, _Hook_method, _Hook_stream;
+ import ansiEscapes from 'ansi-escapes';
+ import { StringDecoder } from 'string_decoder';
+-import { Terminal } from './Terminal';
++import { Terminal } from './Terminal.js';
+ export class Hook {
+     constructor(stream) {
+         _Hook_decoder.set(this, new StringDecoder());
+diff --git a/node_modules/stdout-update/lib/UpdateManager.js b/node_modules/stdout-update/lib/UpdateManager.js
+index 658e844..bdc163f 100644
+--- a/node_modules/stdout-update/lib/UpdateManager.js
++++ b/node_modules/stdout-update/lib/UpdateManager.js
+@@ -10,9 +10,9 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
+     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+ };
+ var _UpdateManager_hooks, _UpdateManager_isActive, _UpdateManager_lastLength, _UpdateManager_outside, _UpdateManager_terminal, _UpdateManager_wrapper;
+-import { Hook } from './Hook';
+-import { Terminal } from './Terminal';
+-import { Wrapper } from './Wrapper';
++import { Hook } from './Hook.js';
++import { Terminal } from './Terminal.js';
++import { Wrapper } from './Wrapper.js';
+ export class UpdateManager {
+     constructor(stdout, stderr) {
+         _UpdateManager_hooks.set(this, void 0);
+diff --git a/node_modules/stdout-update/lib/Wrapper.js b/node_modules/stdout-update/lib/Wrapper.js
+index b418a87..2096327 100644
+--- a/node_modules/stdout-update/lib/Wrapper.js
++++ b/node_modules/stdout-update/lib/Wrapper.js
+@@ -13,7 +13,7 @@ var _Wrapper_rows;
+ import ansiStyles from 'ansi-styles';
+ import stringWidth from 'string-width';
+ import stripAnsi from 'strip-ansi';
+-import { Terminal } from './Terminal';
++import { Terminal } from './Terminal.js';
+ const ESCAPES = new Set(['\u001B', '\u009B']);
+ const DEFAULT_COLOR_CODE = 39;
+ const INDENT = 4;
+diff --git a/node_modules/stdout-update/lib/index.js b/node_modules/stdout-update/lib/index.js
+index 6672145..d297d09 100644
+--- a/node_modules/stdout-update/lib/index.js
++++ b/node_modules/stdout-update/lib/index.js
+@@ -1 +1 @@
+-export { default } from './UpdateManager';
++export { default } from './UpdateManager.js';
