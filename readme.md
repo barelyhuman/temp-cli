@@ -10,18 +10,22 @@ All credits for the original sensors objective c code to [freedomtan](https://gi
 
 ## Usage
 
-It needs the sensors code to be built on the using Mac so you'll have to clone the repo, then run the below command in the `sources/lib/sensors` folder
+0. Install the required dependencies for the package.
+
+```sh
+yarn install --frozen-lockfile
+```
+
+1. Change into the original sensors library code, which is at `source/lib/sensors` and run the following command
 
 ```sh
 make
 ```
 
-then back to the root of the project and run one of the following.
+2. then back to the root of the project and run one of the following.
 
 ```sh
-npm run link
-# or
-yarn link
+./source/index.js
 ```
 
 ## LICENSE

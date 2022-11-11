@@ -19,7 +19,8 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "npm test",
+		"build:sensors": "cd source/lib/sensors; make",
+		"build": "npm run build:sensors;npm test",
 		"release": "np",
 		"test": "xo",
 		"version": "npm run build",
